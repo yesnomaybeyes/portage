@@ -77,7 +77,7 @@ QA_PREBUILT="
 
 S="${WORKDIR}/${MOZ_PN}"
 src_unpack() {
-	src="https://ftp.mozilla.org/pub/thunderbird/nightly/latest-comm-central/thunderbird-70.0a1.en-US.linux-x86_64.tar.bz2"
+	src="https://ftp.mozilla.org/pub/thunderbird/nightly/latest-comm-central/thunderbird-71.0a1.en-US.linux-x86_64.tar.bz2"
 	wget -O thunderbird.tar.bz2 ${src}
 	unpack ./thunderbird.tar.bz2
 

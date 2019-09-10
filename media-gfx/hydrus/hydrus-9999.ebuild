@@ -1,6 +1,6 @@
 # Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-EAPI=5
+EAPI=7
 
 PYTHON_COMPAT=( python3_6 )
 
@@ -28,7 +28,7 @@ RDEPEND="
 	dev-python/lxml[${PYTHON_USEDEP}]
 	dev-python/pillow[${PYTHON_USEDEP}]
 	dev-python/potr[${PYTHON_USEDEP}]
-	dev-python/pycrypto[${PYTHON_USEDEP}]
+	dev-python/pycryptodome[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 	dev-python/PySocks[${PYTHON_USEDEP}]
 	dev-python/wxpython:3.0[${PYTHON_USEDEP}]
@@ -45,7 +45,7 @@ DEPEND="${RDEPEND}"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 src_prepare() {
-
+	eapply_user
 	# remove useless directories and files due to paths-in-opt.patch
 	rm Readme.txt
 	rm -r db/
@@ -69,9 +69,9 @@ src_install() {
 	dodoc COPYING README.md
 	rm COPYING README.md
 
-	dohtml -r help/
-	rm -r help/
-	ln -s "${DOC}/html" help
+#	dohtml -r help/
+#	rm -r help/
+#	ln -s "${DOC}/html" help
 
 	use ffmpeg && ln -s "$(which ffmpeg)" bin/ffmpeg
 
