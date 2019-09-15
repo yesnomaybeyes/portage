@@ -8,7 +8,10 @@ EGO_PN="github.com/kata-containers/runtime"
 #EGIT_REPO_URI="https://github.com/kata-containers/runtime"
 inherit z-golang-vcs linux-info
 
-RDEPEND="=app-misc/yq-2.3.0 app-emulation/qemu app-emulation/kata-shim app-emulation/kata-proxy app-emulation/kata-osbuilder"
+RDEPEND="=app-misc/yq-2.3.0 app-emulation/qemu[virtfs,pulseaudio,lzo,usbredir,vde,systemtap]
+app-emulation/kata-shim
+app-emulation/kata-proxy
+app-emulation/kata-osbuilder"
 DEPEND="${RDEPEND}"
 
 CONFIG_CHECK="~VSOCKETS"
