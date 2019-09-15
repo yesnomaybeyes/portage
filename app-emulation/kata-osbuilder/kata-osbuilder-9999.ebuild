@@ -41,5 +41,5 @@ src_install() {
 	#GOPATH="${S}" emake  DESTDIR="${D}" BINDIR="/usr/bin" install
 	mkdir -p ${D}/usr/bin
 	cp ${FILESDIR}/run.sh ${S}/run.sh
-	makeself "${S}" "${D}/usr/bin/osbuilder" "kata-osbuilder" "./run.sh"
+	makeself "${S}" "${D}/usr/bin/kata-osbuilder" "kata-osbuilder" "./run.sh"
 }
