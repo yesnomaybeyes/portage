@@ -6,7 +6,7 @@ EAPI=6
 
 EGO_PN="github.com/kata-containers/runtime"
 #EGIT_REPO_URI="https://github.com/kata-containers/runtime"
-inherit z-golang-vcs linux-info
+inherit golang-vcs linux-info
 
 RDEPEND="=app-misc/yq-2.3.0 app-emulation/qemu[virtfs,pulseaudio,lzo,usbredir,vde,systemtap]
 app-emulation/kata-shim
@@ -18,38 +18,38 @@ CONFIG_CHECK="~VSOCKETS"
 
 DESCRIPTION="kata-containers runtime"
 
-LICENSE="ISC"
+LICENSE="apache2.0"
 SLOT="0"
 KEYWORDS=""
 
 
 src_prepare() {
-	default
-	kt=src/github.com/kata-containers/runtime/
-		mkdir -p src/bin/
-		cp /usr/bin/yq src/bin/
-		cp ${FILESDIR}/golang.mk $kt/golang.mk
+    default
+    kt=src/github.com/kata-containers/runtime/
+    mkdir -p src/bin/
+    cp /usr/bin/yq src/bin/
+    cp ${FILESDIR}/golang.mk $kt/golang.mk
 
 }
 
 src_compile() {
-	cd "${S}/src/github.com/kata-containers/runtime"
-	GOPATH="${S}" emake  DESTDIR="${D}/usr"
+    cd "${S}/src/github.com/kata-containers/runtime"
+    GOPATH="${S}" emake  DESTDIR="${D}/usr"
 }
 
 src_install() {
-	cd "${S}/src/github.com/kata-containers/runtime"
-	GOPATH="${S}" emake  DESTDIR="${D}" BINDIR="/usr/bin" install
+    cd "${S}/src/github.com/kata-containers/runtime"
+    GOPATH="${S}" emake  DESTDIR="${D}" BINDIR="/usr/bin" install
 }
 
 pkg_setup() {
-linux-info_pkg_setup
+    linux-info_pkg_setup
 }
 
 pkg_postinst() {
-  elog
-  elog "To use Kata, the kernel and rootfs needs to be built. A self-packing script has been included to do this for you."
-  elog "Please run:"
-  elog "   kata-osbuilder"
-  elog "   kata-kernelb"
+    elog
+    elog "To use Kata, the kernel and rootfs needs to be built. A self-packing script has been included to do this for you."
+    elog "Please run:"
+    elog "   kata-osbuilder"
+    elog "   kata-kernelb"
 }

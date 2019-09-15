@@ -14,7 +14,7 @@ DEPEND="${RDEPEND}"
 
 DESCRIPTION="kata-containers kernel"
 
-#LICENSE="ISC"
+LICENSE="apache2.0"
 SLOT="0"
 KEYWORDS=""
 

@@ -14,7 +14,7 @@ DEPEND="${RDEPEND}"
 
 DESCRIPTION="kata-containers osbuilder"
 
-#LICENSE="ISC"
+LICENSE="apache2.0"
 SLOT="0"
 KEYWORDS=""
 
