@@ -18,7 +18,7 @@ CONFIG_CHECK="~VSOCKETS"
 
 DESCRIPTION="kata-containers runtime"
 
-LICENSE="apache2.0"
+LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS=""
 
