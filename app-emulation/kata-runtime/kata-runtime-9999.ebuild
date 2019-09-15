@@ -6,10 +6,11 @@ EAPI=6
 
 EGO_PN="github.com/kata-containers/runtime"
 #EGIT_REPO_URI="https://github.com/kata-containers/runtime"
-inherit golang-vcs linux-info
+inherit z-golang-vcs linux-info
 
 RDEPEND="=app-misc/yq-2.3.0 app-emulation/qemu[virtfs,pulseaudio,lzo,usbredir,vde,systemtap]
 app-emulation/kata-shim
+app-emulation/kata-kernel
 app-emulation/kata-proxy
 app-emulation/kata-osbuilder"
 DEPEND="${RDEPEND}"
