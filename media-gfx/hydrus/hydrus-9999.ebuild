@@ -27,7 +27,6 @@ RDEPEND="
 	dev-python/lz4[${PYTHON_USEDEP}]
 	dev-python/lxml[${PYTHON_USEDEP}]
 	dev-python/pillow[${PYTHON_USEDEP}]
-	dev-python/potr[${PYTHON_USEDEP}]
 	dev-python/pycryptodome[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 	dev-python/PySocks[${PYTHON_USEDEP}]
